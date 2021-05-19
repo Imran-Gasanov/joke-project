@@ -8,6 +8,7 @@ from rest_framework.views import APIView
 import requests
 import json
 
+
 class UserViewSet(viewsets.ModelViewSet):
     queryset = models.User.objects.all()
     serializer_class = UserSerializer
@@ -34,3 +35,7 @@ class GenerateJokeView(APIView):
         joke = data["joke"]
         models.Joke.objects.create(content=joke, user=request.user)
         return Response(joke)
+
+
+class imran:
+    pass
