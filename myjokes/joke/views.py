@@ -37,5 +37,4 @@ class GenerateJokeView(APIView):
         return Response(joke)
 
 
-class imran:
-    pass
+
