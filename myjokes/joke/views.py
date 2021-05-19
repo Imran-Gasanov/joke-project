@@ -19,6 +19,11 @@ class JokeViewSet(viewsets.ModelViewSet):
     serializer_class = JokeSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+    def get_queryset(self):
+        queryset = self.queryset
+        query_set = queryset.filter(user=self.request.user)
+        return query_set
+
     def create(self, request):
         serializer = JokeSerializer(data=request.data, context={'request': request})
         serializer.is_valid(raise_exception=True)  # check all fields is valid before attempting to save
