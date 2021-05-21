@@ -38,6 +38,3 @@ class GenerateJokeView(APIView):
         joke = data["joke"]
         models.Joke.objects.create(content=joke, user=request.user)
         return Response(joke)
-
-
-
