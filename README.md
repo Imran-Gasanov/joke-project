@@ -36,5 +36,10 @@ python3 manage.py runserver
 ### Использование функций сервера
 #### 1. Регистрация
 После того как Вы перейдете по ссылке, можно зарегистрировать  пользователя. Для этого в адресной строке нужно добавить /rest-auth/registration/. Перед нами должно появиться окно регистрации.
-![Иллюстрация к проекту](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/1.png)
+![Регистрация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/1.png)
+Заполняем поля и нажимаем кнопку "POST" и получаем ключ, который понадобится нам для следующих функций.
+![Ключ](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/2.png)
 #### 2. Авторизация
+Для того чтобы авторизоваться, к адресу добавляем /rest-auth/login/. Заполняем поля (Email заполнять необязательно) и, после нажатия кнопки "POST" снова получаем ключ.
+![Авторизация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/3.png)
+
