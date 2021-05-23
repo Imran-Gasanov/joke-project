@@ -42,4 +42,5 @@ python3 manage.py runserver
 #### 2. Авторизация
 Для того чтобы авторизоваться, к адресу добавляем /rest-auth/login/. Заполняем поля (Email заполнять необязательно) и, после нажатия кнопки "POST" снова получаем ключ.
 ![Авторизация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/3.png)
+N
 
