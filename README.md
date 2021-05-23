@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 ## Применение
 ### Запуск сервера
-Из директории, в которой была создана копия проекта, переходим в папку my_project
+Из директории, в которой была создана копия проекта, переходим в папку my_project.
 ```bash
 cd my_project/
 ```
@@ -25,22 +25,39 @@ cd my_project/
 ```bash
 source myvenv/bin/activate
 ```
-Далее переходим в myjokes
+Далее переходим в myjokes.
 ```bash
 cd myjokes/
 ```
-Запускаем сервер
+Запускаем сервер.
 ```bash
 python3 manage.py runserver
 ```
 ### Использование функций сервера
+Чтобы продемонстрировать функционал приложения я воспользуюсь программой "Postman".
 #### 1. Регистрация
-После того как Вы перейдете по ссылке, можно зарегистрировать  пользователя. Для этого в адресной строке нужно добавить /rest-auth/registration/. Перед нами должно появиться окно регистрации.
+Чтобы зарегистрировать нового пользователя, создаем "POST" запрос и к адресу добавляем /rest-auth/registration/. Далее заполняем вклалку "Body", нажимаем "Send" и получаем ключ нашего нового пользователя.
 ![Регистрация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/1.png)
-Заполняем поля и нажимаем кнопку "POST" и получаем ключ, который понадобится нам для следующих функций.
-![Ключ](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/2.png)
 #### 2. Авторизация
-Для того чтобы авторизоваться, к адресу добавляем /rest-auth/login/. Заполняем поля (Email заполнять необязательно) и, после нажатия кнопки "POST" снова получаем ключ.
-![Авторизация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/3.png)
-N
-
+Авторизация проходит аналогично, только теперь к адресу добавляем /rest-auth/login/. Заполняем поля и снова получаем ключ.
+![Авторизация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/2.png)
+#### 3. Генерация шутки
+Создаем "GET" запрос /generate/, добавляем в Headers ключ пользователя, получаем шутку.
+![Генерация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/3.png)
+#### 4. Создание шутки
+Создаем "POST" запрос /jokes/, добавляем в Headers ключ пользователя также как и в генерации шутки, а в "Body" записываем нашу шутку.
+![Создание](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/4.png)
+#### 5. Просмотр шуток
+Создаем "POST" запрос /jokes/, добавляем в Headers ключ пользователя. Вернется список наших шуток, если ввести /jokes/id/, вернется только одна шутка по id.(контент второй шутки изменен, потому что скрин из будущего)
+![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/5.png)
+![Просмотродной](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/6.png)
+#### 6. Удаление шутки
+Создаем "DELETE" запрос /jokes/, добавляем в Headers ключ пользователя.
+![Удаление](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/7.png)
+Проверяем список наших шуток, видим, что шутка удалена.
+![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/8.png)
+#### 7. Изменение шутки
+Создаем "PUT" запрос /jokes/id/, добавляем в Headers ключ пользователя, в "Body" записываем контент измененной шутки.
+![Изменение](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/10.png)
+Снова проверяем список шуток, видим, что шутка изменена.
+![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/11.png)
