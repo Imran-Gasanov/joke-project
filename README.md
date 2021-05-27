@@ -36,7 +36,7 @@ python manage.py runserver
 ### Использование функций сервера
 Чтобы продемонстрировать функционал приложения я воспользуюсь программой "Postman".
 #### 1. Регистрация
-REQUEST
+##### REQUEST
 
 endpoint: /rest-auth/registration/
 
@@ -51,7 +51,7 @@ Body:
     "password2":  "shrekl0vef1ona"
 }
 ```
-RESPONSE
+##### RESPONSE
 
 Status Code: 200 Ok
 
@@ -60,7 +60,7 @@ Str: "Joke"![Регистрация](https://github.com/Imran-Gasanov/joke-proje
 Авторизация проходит аналогично, только теперь к адресу добавляем /rest-auth/login/. Заполняем поля и снова получаем ключ.
 ![Авторизация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/2.png)
 #### 3. Генерация шутки
-REQUEST
+###### REQUEST
 
 endpoint: /generate/
 
@@ -68,7 +68,7 @@ method: GET
 
 Headers: Authorization: Token keyToken
 
-RESPONSE
+##### RESPONSE
 
 Status Code: 200 Ok
 
