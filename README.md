@@ -36,8 +36,26 @@ python manage.py runserver
 ### Использование функций сервера
 Чтобы продемонстрировать функционал приложения я воспользуюсь программой "Postman".
 #### 1. Регистрация
-Чтобы зарегистрировать нового пользователя, создаем "POST" запрос и к адресу добавляем /rest-auth/registration/. Далее заполняем вклалку "Body", нажимаем "Send" и получаем ключ нашего нового пользователя.
-![Регистрация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/1.png)
+REQUEST
+
+endpoint: /rest-auth/registration/
+
+method: POST
+
+Body:
+```html
+{
+    "username": "Shrek",
+    "email": "shrek@mail.com",
+    "password1": "shrekl0vef1ona",
+    "password2":  "shrekl0vef1ona"
+}
+```
+RESPONSE
+
+Status Code: 200 Ok
+
+Str: "Joke"![Регистрация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/1.png)
 #### 2. Авторизация
 Авторизация проходит аналогично, только теперь к адресу добавляем /rest-auth/login/. Заполняем поля и снова получаем ключ.
 ![Авторизация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/2.png)
