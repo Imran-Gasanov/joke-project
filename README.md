@@ -43,12 +43,17 @@ python manage.py runserver
 ![Авторизация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/2.png)
 #### 3. Генерация шутки
 REQUEST
+
 endpoint: /generate/
+
 method: GET
+
 Headers: Authorization: Token keyToken
 
 RESPONSE
+
 Status Code: 200 Ok
+
 Str: "Joke"
 ![Генерация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/3.png)
 #### 4. Создание шутки
