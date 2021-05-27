@@ -31,7 +31,7 @@ cd myjokes/
 ```
 Запускаем сервер.
 ```bash
-python3 manage.py runserver
+python manage.py runserver
 ```
 ### Использование функций сервера
 Чтобы продемонстрировать функционал приложения я воспользуюсь программой "Postman".
@@ -42,7 +42,14 @@ python3 manage.py runserver
 Авторизация проходит аналогично, только теперь к адресу добавляем /rest-auth/login/. Заполняем поля и снова получаем ключ.
 ![Авторизация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/2.png)
 #### 3. Генерация шутки
-Создаем "GET" запрос /generate/, добавляем в Headers ключ пользователя, получаем шутку.
+REQUEST
+endpoint: /generate/
+method: GET
+Headers: Authorization: Token keyToken
+
+RESPONSE
+Status Code: 200 Ok
+Str: "Joke"
 ![Генерация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/3.png)
 #### 4. Создание шутки
 Создаем "POST" запрос /jokes/, добавляем в Headers ключ пользователя также как и в генерации шутки, а в "Body" записываем нашу шутку.
