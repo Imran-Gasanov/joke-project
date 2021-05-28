@@ -54,10 +54,11 @@ Body:
 ##### RESPONSE
 
 Status Code: 201 Created
+```html
 {
     key: str
 }
-
+```
 ![Регистрация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/1.png)
 #### 2. Авторизация
 ##### REQUEST
@@ -76,9 +77,11 @@ Body:
 ##### RESPONSE
 
 Status Code: 201 Created
+```html
 {
     key: str
 }
+```
 Авторизация проходит аналогично, только теперь к адресу добавляем /rest-auth/login/. Заполняем поля и снова получаем ключ.
 ![Авторизация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/2.png)
 #### 3. Генерация шутки
@@ -106,14 +109,15 @@ method: POST
 Headers: Authorization: Token keyToken
 
 Body:
+```html
 {
     "content": str
 }
-
+```
 ##### RESPONSE
 
 Status Code: 200 Ok
-
+```html
 {
     "url": str,
     "user": {
@@ -124,6 +128,7 @@ Status Code: 200 Ok
     },
     "content": str
 }
+```
 ![Создание](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/4.png)
 #### 5. Просмотр шуток
 ###### REQUEST
@@ -135,14 +140,15 @@ method: GET
 Headers: Authorization: Token keyToken
 
 Body:
+```html
 {
     "content": str
 }
-
+```
 ##### RESPONSE
 
 Status Code: 200 Ok
-
+```html
 {
     "url": str,
     "user": {
@@ -153,6 +159,7 @@ Status Code: 200 Ok
     },
     "content": str
 }
+```
 ![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/5.png)
 Для просмотра одной шутки в endpoint нужно добавить id шутки
 ![Просмотродной](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/6.png)
@@ -181,13 +188,15 @@ method: PUT
 Headers: Authorization: Token keyToken
 
 Body:
+```html
 {
     "content": str
 }
-
+```
 ##### RESPONSE
 
 Status Code: 200 OK
+```html
 {
     "url": str,
     "user": {
@@ -198,6 +207,7 @@ Status Code: 200 OK
     },
     "content": str
 }
+```
 ![Изменение](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/9.png)
 Снова проверяем список шуток, видим, что шутка изменена.
 ![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/10.png)
