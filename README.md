@@ -45,18 +45,40 @@ method: POST
 Body:
 ```html
 {
-    "username": "Shrek",
-    "email": "shrek@mail.com",
-    "password1": "shrekl0vef1ona",
-    "password2":  "shrekl0vef1ona"
+    "username": str,
+    "email": str,
+    "password1": str,
+    "password2":  str
 }
 ```
 ##### RESPONSE
 
-Status Code: 200 Ok
+Status Code: 201 Created
+{
+    key: str
+}
 
-Str: "Joke"![Регистрация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/1.png)
+![Регистрация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/1.png)
 #### 2. Авторизация
+##### REQUEST
+
+endpoint: /rest-auth/login/
+
+method: POST
+
+Body:
+```html
+{
+    "username": str,
+    "password": str
+}
+```
+##### RESPONSE
+
+Status Code: 201 Created
+{
+    key: str
+}
 Авторизация проходит аналогично, только теперь к адресу добавляем /rest-auth/login/. Заполняем поля и снова получаем ключ.
 ![Авторизация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/2.png)
 #### 3. Генерация шутки
@@ -75,19 +97,107 @@ Status Code: 200 Ok
 Str: "Joke"
 ![Генерация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/3.png)
 #### 4. Создание шутки
-Создаем "POST" запрос /jokes/, добавляем в Headers ключ пользователя также как и в генерации шутки, а в "Body" записываем нашу шутку.
+###### REQUEST
+
+endpoint: /generate/
+
+method: POST
+
+Headers: Authorization: Token keyToken
+
+Body:
+{
+    "content": str
+}
+
+##### RESPONSE
+
+Status Code: 200 Ok
+
+{
+    "url": str,
+    "user": {
+        "url": str,
+        "username": str,
+        "email": str,
+        "is_staff": false
+    },
+    "content": str
+}
 ![Создание](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/4.png)
 #### 5. Просмотр шуток
-Создаем "POST" запрос /jokes/, добавляем в Headers ключ пользователя. Вернется список наших шуток, если ввести /jokes/id/, вернется только одна шутка по id.(контент второй шутки изменен, потому что скрин из будущего)
+###### REQUEST
+
+endpoint: /generate/
+
+method: GET
+
+Headers: Authorization: Token keyToken
+
+Body:
+{
+    "content": str
+}
+
+##### RESPONSE
+
+Status Code: 200 Ok
+
+{
+    "url": str,
+    "user": {
+        "url": str,
+        "username": str,
+        "email": str,
+        "is_staff": false
+    },
+    "content": str
+}
 ![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/5.png)
+Для просмотра одной шутки в endpoint нужно добавить id шутки
 ![Просмотродной](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/6.png)
 #### 6. Удаление шутки
-Создаем "DELETE" запрос /jokes/, добавляем в Headers ключ пользователя.
+###### REQUEST
+
+endpoint: /jokes/id/
+
+method: DELETE
+
+Headers: Authorization: Token keyToken
+
+##### RESPONSE
+
+Status Code: 204 No Content
 ![Удаление](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/7.png)
 Проверяем список наших шуток, видим, что шутка удалена.
 ![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/8.png)
 #### 7. Изменение шутки
-Создаем "PUT" запрос /jokes/id/, добавляем в Headers ключ пользователя, в "Body" записываем контент измененной шутки.
-![Изменение](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/10.png)
+###### REQUEST
+
+endpoint: /jokes/id/
+
+method: PUT
+
+Headers: Authorization: Token keyToken
+
+Body:
+{
+    "content": str
+}
+
+##### RESPONSE
+
+Status Code: 200 OK
+{
+    "url": str,
+    "user": {
+        "url": str,
+        "username": str,
+        "email": str,
+        "is_staff": false
+    },
+    "content": str
+}
+![Изменение](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/9.png)
 Снова проверяем список шуток, видим, что шутка изменена.
-![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/11.png)
+![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/10.png)
