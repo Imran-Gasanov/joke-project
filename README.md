@@ -76,7 +76,7 @@ Body:
 ```
 ##### RESPONSE
 
-Status Code: 201 Created
+Status Code: 200 Ok
 ```html
 {
     key: str
@@ -102,7 +102,7 @@ Str: "Joke"
 #### 4. Создание шутки
 ##### REQUEST
 
-endpoint: /generate/
+endpoint: /jokes/
 
 method: POST
 
@@ -124,7 +124,7 @@ Status Code: 200 Ok
         "url": str,
         "username": str,
         "email": str,
-        "is_staff": false
+        "is_staff": boolean
     },
     "content": str
 }
@@ -133,7 +133,40 @@ Status Code: 200 Ok
 #### 5. Просмотр шуток
 ##### REQUEST
 
-endpoint: /generate/
+endpoint: /jokes/
+
+method: GET
+
+Headers: Authorization: Token keyToken
+
+Body:
+```html
+{
+    "content": str
+}
+```
+##### RESPONSE
+
+Status Code: 200 Ok
+```html
+[
+{
+    "url": str,
+    "user": {
+        "url": str,
+        "username": str,
+        "email": str,
+        "is_staff": false
+    },
+    "content": str
+}
+]
+```
+![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/5.png)
+Для просмотра одной шутки в endpoint нужно добавить id шутки
+##### REQUEST
+
+endpoint: /jokes/<id>/
 
 method: GET
 
@@ -160,13 +193,11 @@ Status Code: 200 Ok
     "content": str
 }
 ```
-![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/5.png)
-Для просмотра одной шутки в endpoint нужно добавить id шутки
 ![Просмотродной](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/6.png)
 #### 6. Удаление шутки
 ##### REQUEST
 
-endpoint: /jokes/id/
+endpoint: /jokes/<id>/
 
 method: DELETE
 
