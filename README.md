@@ -100,7 +100,7 @@ Status Code: 200 Ok
 Str: "Joke"
 ![Генерация](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/3.png)
 #### 4. Создание шутки
-###### REQUEST
+##### REQUEST
 
 endpoint: /generate/
 
@@ -131,7 +131,7 @@ Status Code: 200 Ok
 ```
 ![Создание](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/4.png)
 #### 5. Просмотр шуток
-###### REQUEST
+##### REQUEST
 
 endpoint: /generate/
 
@@ -164,7 +164,7 @@ Status Code: 200 Ok
 Для просмотра одной шутки в endpoint нужно добавить id шутки
 ![Просмотродной](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/6.png)
 #### 6. Удаление шутки
-###### REQUEST
+##### REQUEST
 
 endpoint: /jokes/id/
 
@@ -179,7 +179,7 @@ Status Code: 204 No Content
 Проверяем список наших шуток, видим, что шутка удалена.
 ![Просмотрвсех](https://github.com/Imran-Gasanov/joke-project/raw/master/screens/8.png)
 #### 7. Изменение шутки
-###### REQUEST
+##### REQUEST
 
 endpoint: /jokes/id/
 
